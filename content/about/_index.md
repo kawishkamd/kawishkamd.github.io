@@ -9,18 +9,18 @@ description: Just a blog :)
 
 **Redirections**:
 
-- [**Awesome Piracy Resources**](https://kavishkafx.github.io/piracy)
+- [**Awesome Piracy Resources**](https://kawishkamd.github.io/piracy)
   - Discover a curated list of useful tools and resources.
 
 - **WinUtil Installation**:  
   Run the following PowerShell command to run WinUtil by [Chris Titus](https://github.com/ChrisTitusTech/winutil) :  
   ```bash
-  iex "& {$(irm kavishkafx.github.io/win)}"
+  iex "& {$(irm kawishkamd.github.io/win)}"
   ```
 - **Chocolatey Installation**:
   Run the following PowerShell command to install Chocolatey:
   ```bash
-  iex "& {$(irm kavishkafx.github.io/choco)}"
+  iex "& {$(irm kawishkamd.github.io/choco)}"
   ```
 
 ---

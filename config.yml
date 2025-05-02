@@ -1,5 +1,5 @@
-baseURL: "https://kavishkaFX.github.io/"
-title: "KAVISHKA"
+baseURL: "https://kawishkamd.github.io/"
+title: "KAWISHKA"
 pagination:
   pagerSize: 8
 theme: PaperMod
@@ -22,9 +22,9 @@ outputs:
 
 params:
   env: production
-  title: "KAVISHKA"
+  title: "KAWISHKA"
   description: "A comprehensive personal blog covering topics on Common Social Incidents, Linux, Windows, Android, Hacker News, Tech News, and various topics. Expert insights, tutorials, and trending tech updates by KAVISHKA."
-  keywords: [Blog, Technology, Linux, Windows, Android, "Hacker News", "Tech News", "Software", "Hardware", "Tutorials", "Politics", "Tech Tutorials", "Tech Guide", "Cybersecurity", "Sri Lanka", "kavishkafx", "KAVISHKA Blog"]
+  keywords: [Blog, Technology, Linux, Windows, Android, "Hacker News", "Tech News", "Software", "Hardware", "Tutorials", "Politics", "Tech Tutorials", "Tech Guide", "Cybersecurity", "Sri Lanka", "kawishkamd", "KAVISHKA Blog"]
   author: "KAVISHKA"
   images: ["/images/favicon/favicon-32x32.png"]
   DateFormat: "January 2, 2006"
@@ -77,11 +77,11 @@ params:
 
   socialIcons:
     - name: github
-      url: "https://github.com/kavishkafx"
+      url: "https://github.com/kawishkamd"
     - name: youtube
-      url: "https://youtube.com/@kavishkafx"
+      url: "https://youtube.com/@kawishkamd"
     - name: tiktok
-      url: "https://tiktok.com/@kavishkafx"
+      url: "https://tiktok.com/@kawishkamd"
     - name: telegram
       url: "https://t.me/kavishkafx"
     - name: rss
@@ -97,7 +97,7 @@ params:
     hiddenInSingle: true
 
   editPost:
-    URL: "https://github.com/kavishkafx/kavishkafx.github.io/content"
+    URL: "https://github.com/kawishkamd/kawishkamd.github.io/content"
     Text: "Suggest Changes"
     appendFilePath: true
 

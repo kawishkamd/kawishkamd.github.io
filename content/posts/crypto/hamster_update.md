@@ -5,7 +5,7 @@ draft: false
 # weight: 1
 # aliases: ["/first"]
 categories: ["General","Crypto"]
-tags: ["General","Crypto","Hamster Combact","Airdrop","Tap To Earn","Blum Airdrop","CEXP Airdrop","kavishkafx"]
+tags: ["General","Crypto","Hamster Combact","Airdrop","Tap To Earn","Blum Airdrop","CEXP Airdrop","kawishkamd"]
 author: "Kavishka"
 # author: ["Me", "You"] # multiple authors
 showToc: true
@@ -29,7 +29,7 @@ cover:
     relative: false # when using page bundles set this to true
     hidden: true # only hide on current single page
 editPost:
-    URL: "https://github.com/kavishkafx/kavishkafx.github.io/tree/main/content"
+    URL: "https://github.com/kawishkamd/kawishkamd.github.io/tree/main/content"
     Text: "Suggest Changes" # edit text
     appendFilePath: true # to append file path to Edit link
 ---
@@ -47,4 +47,4 @@ If you're only doing TG airdrops, keep an eye on BLUM, CEXP, and KUCOIN airdrops
 
 ** These TG tapping bots are a bunch of bull 💩 in my opinion. Try to engage with Testnet and Mainnet communities. -- It may be boring, but that'll make you rich.
 
-[Previous Post](https://kavishkafx.github.io/posts/general/hamster_combact/)
+[Previous Post](https://kawishkamd.github.io/posts/general/hamster_combact/)
