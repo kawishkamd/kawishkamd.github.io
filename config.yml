@@ -68,7 +68,7 @@ params:
 
   # Site label/logo
   label:
-    text: ""
+    text: " "
     icon: "/images/favicon/favicon-32x32.png"
     iconHeight: 35
 
