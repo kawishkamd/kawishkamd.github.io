@@ -1,0 +1,168 @@
+baseURL: "https://kawishkamd.github.io/"
+languageCode: "en-us"
+title: "KAWISHKA"
+theme: "PaperMod"
+
+# Basic Hugo settings
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+enableEmoji: true
+
+# Analytics
+googleAnalytics: "G-E7L5P3HRTQ"
+
+minify:
+  disableXML: true
+  minifyOutput: true
+
+# Output formats
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+
+# PaperMod theme parameters
+params:
+  env: production
+  title: "KAWISHKA"
+  description: "A comprehensive personal blog covering topics on Common Social Incidents, Linux, Windows, Android, Hacker News, Tech News, and various topics. Expert insights, tutorials, and trending tech updates by KAVISHKA."
+  keywords: [Blog, Technology, Linux, Windows, Android, "Hacker News", "Tech News", "Software", "Hardware", "Tutorials", "Politics", "Tech Tutorials", "Tech Guide", "Cybersecurity", "Sri Lanka", "kawishkamd", "KAVISHKA Blog"]
+  author: "Kawishka"
+  images: ["/images/favicon/favicon-32x32.png"]
+  DateFormat: "January 2, 2006"
+  
+  # Theme settings
+  defaultTheme: dark
+  disableThemeToggle: false
+  
+  # Post settings
+  ShowReadingTime: true
+  ShowShareButtons: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowWordCount: true
+  ShowRssButtonInSectionTermList: true
+  UseHugoToc: true
+  disableSpecial1stPost: false
+  disableScrollToTop: false
+  
+  # Content settings
+  comments: false
+  hidemeta: false
+  hideSummary: false
+  showtoc: true
+  tocopen: true
+
+  # Assets
+  assets:
+    disableFingerprinting: true
+    favicon: "/images/favicon/favicon.ico"
+    favicon16x16: "/images/favicon/favicon-16x16.png"
+    favicon32x32: "/images/favicon/favicon-32x32.png"
+    apple_touch_icon: "/images/favicon/apple-icon.png"
+    safari_pinned_tab: "/images/favicon/apple-icon.png"
+
+  # Site label/logo
+  label:
+    text: ""
+    icon: "/images/favicon/favicon-32x32.png"
+    iconHeight: 35
+
+  # Profile mode settings
+  profileMode:
+    enabled: true
+    title: "Kawishka Dahanayaka"
+    subtitle: ""
+    imageUrl: "https://avatars.githubusercontent.com/u/210028396?s=400&u=1d73b8482bf02571a247121059d42d12db81d6d7&v=4" # Add your profile image path
+    imageWidth: 200
+    imageHeight: 200
+    imageTitle: "Kawishka Dahanayaka"
+    buttons:
+      - name: Posts
+        url: posts
+      - name: Tags
+        url: tags
+
+  # Home page info (alternative to profile mode)
+  homeInfoParams:
+    Title: ""
+    Content: ""
+
+  # Social media links
+  socialIcons:
+    - name: github
+      url: "https://github.com/kawishkamd"
+    - name: youtube
+      url: "https://youtube.com/@kawishkamd"
+    - name: rss
+      url: "/index.xml"
+
+  # Google Analytics verification
+  analytics:
+    google:
+      SiteVerificationTag: "fe4D2p-wxKj7Ztm9V8UMLGlBtzGLroqV1ojTHQo_mv4"
+
+  # Cover image settings
+  cover:
+    hidden: false
+    hiddenInList: false
+    hiddenInSingle: true
+
+  # Edit post settings
+  editPost:
+    URL: "https://github.com/kawishkamd/kawishkamd.github.io/tree/main/content"
+    Text: "Suggest Changes"
+    appendFilePath: true
+
+  # Search settings (Fuse.js)
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    keys: ["title", "permalink", "summary", "content"]
+
+# Main navigation menu
+menu:
+  main:
+    - identifier: search
+      name: Search
+      url: /search/
+      weight: 5
+    - identifier: posts
+      name: Posts
+      url: /posts/
+      weight: 10
+    - identifier: categories
+      name: Categories
+      url: /categories/
+      weight: 15
+    - identifier: hackernews
+      name: HackerNews
+      url: /hackernews/
+      weight: 20
+    - identifier: archive
+      name: Archive
+      url: /archives/
+      weight: 25
+    - identifier: about
+      name: About
+      url: /about/
+      weight: 30
+
+# Syntax highlighting
+pygmentsUseClasses: true
+markup:
+  highlight:
+    noClasses: false
+    anchorLineNos: true
+    codeFences: true
+    guessSyntax: true
+    lineNos: true
+    style: monokai

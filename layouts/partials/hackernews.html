@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="robots" content="index, follow">
+    <title>{{ .Title }}</title>
+    {{ partial "head.html" . }}
+    <style>
+        :root {
+            --entry: #fff;
+            --primary: #222;
+            --secondary: #666;
+            --tertiary: #999;
+            --content: #222;
+            --border: #eee;
+            --content-gap: 20px;
+            --radius: 5px;
+            --code-bg: #f7f7f7;
+            --code-block-bg: #2f2f2f;
+            --gap: 20px;
+            --header-height: 60px;
+            --footer-height: 60px;
+            --main-width: 800px;
+        }
+        .dark {
+            --entry: #2e2e33;
+            --primary: #ddd;
+            --secondary: #aaa;
+            --tertiary: #888;
+            --content: #bbb;
+            --border: #333;
+        }
+
+        /* Custom CSS */
+        .page-header,
+        .post-header {
+            margin: 24px auto var(--content-gap) auto;
+        }
+
+        .post-title {
+            margin-bottom: 2px;
+            font-size: 40px;
+        }
+
+        .post-description {
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+
+        .post-meta,
+        .breadcrumbs {
+            color: var(--secondary);
+            font-size: 14px;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .post-meta .i18n_list li {
+            display: inline-flex;
+            list-style: none;
+            margin: auto 3px;
+            box-shadow: 0 1px 0 var(--secondary);
+        }
+
+        .breadcrumbs a {
+            font-size: 16px;
+        }
+
+        .post-content {
+            color: var(--content);
+        }
+
+        /* Heading and text styles */
+        .post-content h1 {
+            margin: 40px auto 32px;
+            font-size: 40px;
+        }
+
+        .post-content h2 {
+            margin: 32px auto 24px;
+            font-size: 32px;
+        }
+
+        .post-content h3 {
+            margin: 24px 0 16px;
+            font-size: 24px;
+        }
+
+        /* Add any remaining custom styles here */
+    </style>
+</head>
+<body class="{{ if or (eq .Kind "page") (eq .Kind "section") }}{{ if not .Site.Params.disableThemeToggle }}dark{{ end }}{{ end }}">
+    {{ partial "header.html" . }}
+    <main class="main">
+        <article class="post-single">
+            <header class="post-header">
+                {{ partial "breadcrumbs.html" . }}
+                <h1 class="post-title entry-hint-parent">
+                    {{ .Title }}
+                    {{ if .Draft }}
+                    <span class="entry-hint" title="Draft">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="35" viewBox="0 -960 960 960" fill="currentColor">
+                            <path d="M160-410v-60h300v60H160Zm0-165v-60h470v60H160Zm0-165v-60h470v60H160Zm360 580v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q9 9 13 20t4 22q0 11-4.5 22.5T862.09-380L643-160H520Zm300-263-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z" />
+                        </svg>
+                    </span>
+                    {{ end }}
+                </h1>
+                {{ if .Description }}
+                <div class="post-description">
+                    {{ .Description }}
+                </div>
+                {{ end }}
+                {{ if not (.Param "hideMeta") }}
+                <div class="post-meta">
+                    {{ partial "post_meta.html" . }}
+                    {{ partial "translation_list.html" . }}
+                    {{ partial "edit_post.html" . }}
+                    {{ partial "post_canonical.html" . }}
+                </div>
+                {{ end }}
+            </header>
+            {{ $isHidden := (.Param "cover.hiddenInSingle") | default (.Param "cover.hidden") | default false }}
+            {{ partial "cover.html" (dict "cxt" . "IsSingle" true "isHidden" $isHidden) }}
+            {{ if (.Param "ShowToc") }}
+            {{ partial "toc.html" . }}
+            {{ end }}
+            
+            <div class="post-content">
+                {{ if not (.Param "disableAnchoredHeadings") }}
+                {{ partial "anchored_headings.html" .Content }}
+                {{ else }}{{ .Content }}{{ end }}
+                <ul id="hackernews-stories" class="hn-story-list">
+                    <!-- Stories will be inserted here by JavaScript -->
+                </ul>
+            </div>
+            
+            <footer class="post-footer">
+                {{ $tags := .Language.Params.Taxonomies.tag | default "tags" }}
+                <ul class="post-tags">
+                    {{ range ($.GetTerms $tags) }}
+                    <li><a href="{{ .Permalink }}">{{ .LinkTitle }}</a></li>
+                    {{ end }}
+                </ul>
+                {{ if (.Param "ShowPostNavLinks") }}
+                {{ partial "post_nav_links.html" . }}
+                {{ end }}
+                {{ if and .Site.Params.ShowShareButtons (ne .Params.disableShare true) }}
+                {{ partial "share_icons.html" . }}
+                {{ end }}
+            </footer>
+            
+            {{ if (.Param "comments") }}
+            {{ partial "comments.html" . }}
+            {{ end }}
+        </article>
+    </main>
+    {{ partial "footer.html" . }}
+    <script src="/js/hackernews.js"></script>
+</body>
+</html>
