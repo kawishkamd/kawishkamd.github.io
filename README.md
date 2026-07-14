@@ -10,7 +10,7 @@ This is the source code for my personal portfolio website, built with Hugo.
 
 ## Acknowledgements
 
-The visual design of this portfolio is inspired by the [portfolio of Ayodhya Sankalpa](https://github.com/AyodhyaSankalpa/ayodhyasankalpa.github.io) and is used with permission. While inspired by the original design, this project has been rebuilt as a Hugo-based website with my own implementation, features, content, and customizations.
+The visual design of this portfolio is inspired by the portfolio of [Ayodhya Sankalpa](https://github.com/AyodhyaSankalpa/ayodhyasankalpa.github.io) and is used with permission. While inspired by the original design, this project has been rebuilt as a Hugo-based website with my own implementation, features, content, and customizations.
 
 ## Copyright
 
