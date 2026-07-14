@@ -1,0 +1,21 @@
+baseURL = 'https://kawishkamd.github.io/'
+languageCode = 'en-us'
+title = 'Kawishka'
+enableRobotsTXT = true
+
+[params]
+  author = "Kawishka Dahanayaka"
+  avatar = "/img/avatar.webp"
+  site_image = "/img/avatar.webp"
+  role = "Linux & Infrastructure"
+  site_description = "Portfolio of Kawishka Dahanayaka, a DevOps-focused developer sharing projects, automation work, and infrastructure insights."
+  site_keywords = ["Kawishka Dahanayaka", "DevOps engineer", "developer portfolio", "Linux", "automation", "infrastructure"]
+  hero_description = "I build Linux infrastructure, automation, and self-hosted systems that don't fall over."
+  about_title = "About Me"
+  about_description_1 = "I work mostly with Linux servers, DevOps tooling, and networking - setting up infra, automating the boring parts, and self-hosting things I could just as easily pay for."
+  about_description_2 = "I like understanding how systems actually work, not just how to use them. Outside of that, I'm usually deep in some rabbit hole - open source, homelab experiments, or a new tool I probably don't need yet."
+  email = "kawishkamd@gmail.com"
+  github = "https://github.com/kawishkamd"
+  linkedin = "https://linkedin.com/in/kawishkamd"
+  youtube = "https://youtube.com/@kawishkamd"
+  formspree_url = "https://formspree.io/f/mzzbbgeo"
