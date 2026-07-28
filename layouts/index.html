@@ -217,7 +217,7 @@
       <!-- Card 1: Piracy Resources -->
       <div class="shortcut-card fade-up">
         <div class="shortcut-icon-header">
-          <i class='bx bx-compass shortcut-icon'></i>
+          <span class="bx-icon shortcut-icon">{{ partial "icon/bx-compass.html" . }}</span>
           <h3 class="shortcut-title">Resources</h3>
         </div>
         <p class="shortcut-desc">A curated directory of alternative resources, media tools, and search engines.</p>
@@ -229,7 +229,7 @@
       <!-- Card 2: WinUtil Setup -->
       <div class="shortcut-card fade-up">
         <div class="shortcut-icon-header">
-          <i class='bx bx-terminal shortcut-icon'></i>
+          <span class="bx-icon shortcut-icon">{{ partial "icon/bx-terminal.html" . }}</span>
           <h3 class="shortcut-title">WinUtil Setup</h3>
         </div>
         <p class="shortcut-desc">Run Chris Titus's Windows Utility script to optimize and configure Windows
@@ -237,7 +237,8 @@
         <div class="shortcut-terminal">
           <code class="terminal-text" id="winutil-cmd">iex "& {$(irm kawishkamd.github.io/win)}"</code>
           <button class="shortcut-copy-btn" onclick="copyShortcutText('winutil-cmd', this)" aria-label="Copy command">
-            <span class="bx-icon" >{{ partial "icon/bx-copy.html" . }}</span>
+            <span class="bx-icon copy-icon">{{ partial "icon/bx-copy.html" . }}</span>
+            <span class="bx-icon check-icon" style="display: none;">{{ partial "icon/bx-check.html" . }}</span>
           </button>
         </div>
       </div>
@@ -245,14 +246,15 @@
       <!-- Card 3: Chocolatey Setup -->
       <div class="shortcut-card fade-up">
         <div class="shortcut-icon-header">
-          <i class='bx bx-package shortcut-icon'></i>
+          <span class="bx-icon shortcut-icon">{{ partial "icon/bx-package.html" . }}</span>
           <h3 class="shortcut-title">Chocolatey Setup</h3>
         </div>
         <p class="shortcut-desc">Install the Chocolatey package manager using a simple PowerShell one-liner.</p>
         <div class="shortcut-terminal">
           <code class="terminal-text" id="choco-cmd">iex "& {$(irm kawishkamd.github.io/choco)}"</code>
           <button class="shortcut-copy-btn" onclick="copyShortcutText('choco-cmd', this)" aria-label="Copy command">
-            <span class="bx-icon" >{{ partial "icon/bx-copy.html" . }}</span>
+            <span class="bx-icon copy-icon">{{ partial "icon/bx-copy.html" . }}</span>
+            <span class="bx-icon check-icon" style="display: none;">{{ partial "icon/bx-check.html" . }}</span>
           </button>
         </div>
       </div>

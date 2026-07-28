@@ -269,34 +269,34 @@ window.observer = new IntersectionObserver((entries) => {
 
   // Theme Toggle Button Logic
   const themeToggle = document.getElementById('theme-toggle');
-  const themeToggleIcon = document.getElementById('theme-toggle-icon');
+  const iconMoon = document.getElementById('theme-toggle-moon');
+  const iconSun = document.getElementById('theme-toggle-sun');
 
-  // Initialize icon state on load based on class presence
-  if (themeToggleIcon) {
-    if (document.documentElement.classList.contains('dark-mode')) {
-      themeToggleIcon.className = 'bx bx-sun';
-    } else {
-      themeToggleIcon.className = 'bx bx-moon';
+  function updateThemeIcons(isDark) {
+    if (iconMoon && iconSun) {
+      if (isDark) {
+        iconMoon.style.display = 'none';
+        iconSun.style.display = 'inline-flex';
+      } else {
+        iconMoon.style.display = 'inline-flex';
+        iconSun.style.display = 'none';
+      }
     }
   }
+
+  // Initialize icon state on load based on class presence
+  updateThemeIcons(document.documentElement.classList.contains('dark-mode'));
 
   if (themeToggle) {
     themeToggle.addEventListener('click', () => {
       document.documentElement.classList.add('theme-transition');
       
-      // Use requestAnimationFrame to ensure the transition class is fully applied before toggling
       requestAnimationFrame(() => {
         document.documentElement.classList.toggle('dark-mode');
         const isDark = document.documentElement.classList.contains('dark-mode');
         localStorage.setItem('theme', isDark ? 'dark' : 'light');
         
-        if (themeToggleIcon) {
-          if (isDark) {
-            themeToggleIcon.className = 'bx bx-sun';
-          } else {
-            themeToggleIcon.className = 'bx bx-moon';
-          }
-        }
+        updateThemeIcons(isDark);
 
         setTimeout(() => {
           document.documentElement.classList.remove('theme-transition');
@@ -309,12 +309,15 @@ window.observer = new IntersectionObserver((entries) => {
   window.copyShortcutText = function(elementId, btnElement) {
     const text = document.getElementById(elementId).textContent;
     navigator.clipboard.writeText(text).then(() => {
-      const icon = btnElement.querySelector('i');
-      if (icon) {
-        icon.className = 'bx bx-check';
+      const copyIcon = btnElement.querySelector('.copy-icon');
+      const checkIcon = btnElement.querySelector('.check-icon');
+      if (copyIcon && checkIcon) {
+        copyIcon.style.display = 'none';
+        checkIcon.style.display = 'inline-flex';
         btnElement.classList.add('copied');
         setTimeout(() => {
-          icon.className = 'bx bx-copy';
+          copyIcon.style.display = 'inline-flex';
+          checkIcon.style.display = 'none';
           btnElement.classList.remove('copied');
         }, 2000);
       }
