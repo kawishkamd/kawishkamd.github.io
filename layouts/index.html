@@ -3,13 +3,13 @@
   <div class="hero-container">
     <div class="hero-socials">
       {{ if .Site.Params.linkedin }}
-      <a href="{{ .Site.Params.linkedin }}" target="_blank"><i class='bx bxl-linkedin'></i></a>
+      <a href="{{ .Site.Params.linkedin }}" target="_blank"><span class="bx-icon" >{{ partial "icon/bxl-linkedin.html" . }}</span></a>
       {{ end }}
       {{ if .Site.Params.github }}
-      <a href="{{ .Site.Params.github }}" target="_blank"><i class='bx bxl-github'></i></a>
+      <a href="{{ .Site.Params.github }}" target="_blank"><span class="bx-icon" >{{ partial "icon/bxl-github.html" . }}</span></a>
       {{ end }}
       {{ if .Site.Params.youtube }}
-      <a href="{{ .Site.Params.youtube }}" target="_blank"><i class='bx bxl-youtube'></i></a>
+      <a href="{{ .Site.Params.youtube }}" target="_blank"><span class="bx-icon" >{{ partial "icon/bxl-youtube.html" . }}</span></a>
       {{ end }}
     </div>
 
@@ -24,7 +24,7 @@
         <div class="hero-actions-new fade-up">
           <a href="#contact" class="btn-say-hello">
             Say Hello
-            <i class='bx bx-send'></i>
+            <span class="bx-icon" >{{ partial "icon/bx-send.html" . }}</span>
           </a>
         </div>
       </div>
@@ -41,7 +41,7 @@
         <div class="wheel"></div>
       </div>
       <span class="scroll-text">Scroll down</span>
-      <i class='bx bx-down-arrow-alt'></i>
+      <span class="bx-icon" >{{ partial "icon/bx-down-arrow-alt.html" . }}</span>
     </div>
   </div>
 </section>
@@ -144,11 +144,11 @@
 
     <div class="qualification-tabs fade-up">
       <div class="qualification-btn active" data-target="#credentials">
-        <i class='bx bx-award'></i>
+        <span class="bx-icon" >{{ partial "icon/bx-award.html" . }}</span>
         Credentials
       </div>
       <div class="qualification-btn" data-target="#experience">
-        <i class='bx bx-briefcase-alt'></i>
+        <span class="bx-icon" >{{ partial "icon/bx-briefcase-alt.html" . }}</span>
         Experience
       </div>
     </div>
@@ -165,12 +165,12 @@
                 {{ .institution }}
                 {{ if .link }}
                 <a href="{{ .link }}" target="_blank" style="color: var(--red); margin-left: 6px; display: inline-flex; align-items: center; vertical-align: middle;" title="View Credential">
-                  <i class='bx bx-link-external' style="font-size: 14px;"></i>
+                  <span class="bx-icon" style="font-size: 14px;">{{ partial "icon/bx-link-external.html" . }}</span>
                 </a>
                 {{ end }}
               </span>
               <div class="qualification-calendar">
-                <i class='bx bx-calendar'></i>
+                <span class="bx-icon" >{{ partial "icon/bx-calendar.html" . }}</span>
                 {{ .years }}
               </div>
             </div>
@@ -189,12 +189,12 @@
                 {{ .company }}
                 {{ if .link }}
                 <a href="{{ .link }}" target="_blank" style="color: var(--red); margin-left: 6px; display: inline-flex; align-items: center; vertical-align: middle;" title="View Workplace">
-                  <i class='bx bx-link-external' style="font-size: 14px;"></i>
+                  <span class="bx-icon" style="font-size: 14px;">{{ partial "icon/bx-link-external.html" . }}</span>
                 </a>
                 {{ end }}
               </span>
               <div class="qualification-calendar">
-                <i class='bx bx-calendar'></i>
+                <span class="bx-icon" >{{ partial "icon/bx-calendar.html" . }}</span>
                 {{ .years }}
               </div>
             </div>
@@ -222,7 +222,7 @@
         </div>
         <p class="shortcut-desc">A curated directory of alternative resources, media tools, and search engines.</p>
         <a href="https://kawishkamd.github.io/piracy" target="_blank" class="shortcut-action-btn">
-          Explore Resources <i class='bx bx-link-external'></i>
+          Explore Resources <span class="bx-icon" >{{ partial "icon/bx-link-external.html" . }}</span>
         </a>
       </div>
 
@@ -237,7 +237,7 @@
         <div class="shortcut-terminal">
           <code class="terminal-text" id="winutil-cmd">iex "& {$(irm kawishkamd.github.io/win)}"</code>
           <button class="shortcut-copy-btn" onclick="copyShortcutText('winutil-cmd', this)" aria-label="Copy command">
-            <i class='bx bx-copy'></i>
+            <span class="bx-icon" >{{ partial "icon/bx-copy.html" . }}</span>
           </button>
         </div>
       </div>
@@ -252,7 +252,7 @@
         <div class="shortcut-terminal">
           <code class="terminal-text" id="choco-cmd">iex "& {$(irm kawishkamd.github.io/choco)}"</code>
           <button class="shortcut-copy-btn" onclick="copyShortcutText('choco-cmd', this)" aria-label="Copy command">
-            <i class='bx bx-copy'></i>
+            <span class="bx-icon" >{{ partial "icon/bx-copy.html" . }}</span>
           </button>
         </div>
       </div>

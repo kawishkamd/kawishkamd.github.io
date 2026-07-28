@@ -48,13 +48,12 @@
   <meta name="twitter:description" content="{{ $pageDescription }}">
   <meta name="twitter:image" content="{{ $shareImage }}">
   
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="preload" href="{{ "fonts/outfit-latin-400-normal.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{ "fonts/outfit-latin-500-normal.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{ "fonts/outfit-latin-600-normal.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{ "fonts/outfit-latin-700-normal.woff2" | relURL }}" as="font" type="font/woff2" crossorigin>
   
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-  <link href='https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.4/css/boxicons.min.css' rel='stylesheet'>
-  
+
   <link rel="icon" type="image/png" href="{{ .Site.Params.avatar }}">
   
   <link rel="stylesheet" href="{{ "css/style.css" | relURL }}?v=1.8">
@@ -109,7 +108,7 @@
   </ul>
   <div class="nav-actions" style="display: flex; align-items: center; gap: 15px;">
     <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark mode">
-      <i class='bx bx-moon' id="theme-toggle-icon"></i>
+      <span class="bx-icon" id="theme-toggle-icon">{{ partial "icon/bx-moon.html" . }}</span>
     </button>
     <a href="{{ "/" | relLangURL }}#contact" class="nav-cta">Hire Me</a>
   </div>
@@ -135,32 +134,32 @@
   <ul class="mobile-nav-list">
     <li class="mobile-nav-item">
       <a href="{{ "/" | relLangURL }}#about" class="mobile-nav-link" data-target="about">
-        <i class='bx bx-user'></i>
+        <span class="bx-icon" >{{ partial "icon/bx-user.html" . }}</span>
         <span>About</span>
       </a>
     </li>
     <li class="mobile-nav-item">
       <a href="{{ "/" | relLangURL }}#skills" class="mobile-nav-link" data-target="skills">
-        <i class='bx bx-code-alt'></i>
+        <span class="bx-icon" >{{ partial "icon/bx-code-alt.html" . }}</span>
         <span>Skills</span>
       </a>
     </li>
     <li class="mobile-nav-item">
       <a href="{{ "/" | relLangURL }}#projects" class="mobile-nav-link" data-target="projects">
-            <i class='bx bx-grid-alt'></i>
+            <span class="bx-icon" >{{ partial "icon/bx-grid-alt.html" . }}</span>
         <span>Projects</span>
       </a>
     </li>
 
     <li class="mobile-nav-item">
       <a href="{{ "/" | relLangURL }}#qualification" class="mobile-nav-link" data-target="qualification">
-        <i class='bx bx-award'></i>
+        <span class="bx-icon" >{{ partial "icon/bx-award.html" . }}</span>
         <span>Journey</span>
       </a>
     </li>
     <li class="mobile-nav-item">
       <a href="{{ "/" | relLangURL }}#contact" class="mobile-nav-link" data-target="contact">
-        <i class='bx bx-envelope'></i>
+        <span class="bx-icon" >{{ partial "icon/bx-envelope.html" . }}</span>
         <span>Contact</span>
       </a>
     </li>
