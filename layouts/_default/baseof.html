@@ -108,7 +108,8 @@
   </ul>
   <div class="nav-actions" style="display: flex; align-items: center; gap: 15px;">
     <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle dark mode">
-      <span class="bx-icon" id="theme-toggle-icon">{{ partial "icon/bx-moon.html" . }}</span>
+      <span class="bx-icon" id="theme-toggle-moon">{{ partial "icon/bx-moon.html" . }}</span>
+      <span class="bx-icon" id="theme-toggle-sun" style="display: none;">{{ partial "icon/bx-sun.html" . }}</span>
     </button>
     <a href="{{ "/" | relLangURL }}#contact" class="nav-cta">Hire Me</a>
   </div>

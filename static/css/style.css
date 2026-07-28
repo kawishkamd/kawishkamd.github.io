@@ -363,7 +363,7 @@ nav.nav-hidden {
   transform: translateY(-2px);
 }
 
-.btn-say-hello i {
+.btn-say-hello i, .btn-say-hello .bx-icon {
   font-size: 20px;
 }
 
@@ -462,7 +462,7 @@ nav.nav-hidden {
   }
 }
 
-.scroll-down i {
+.scroll-down i, .scroll-down .bx-icon {
   font-size: 18px;
   animation: bounceDown 2s infinite ease-in-out;
 }
@@ -1061,7 +1061,7 @@ footer {
   border-radius: 12px;
 }
 
-.qualification-btn i {
+.qualification-btn i, .qualification-btn .bx-icon {
   font-size: 1.4rem;
 }
 
@@ -1328,7 +1328,7 @@ footer {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  vertical-align: middle;
+  vertical-align: -0.125em;
 }
 .bx-icon svg {
   width: 1em;
