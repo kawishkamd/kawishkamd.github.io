@@ -1,3 +1,39 @@
+@font-face {
+  font-family: 'Outfit';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src: url('../fonts/outfit-latin-300-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Outfit';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url('../fonts/outfit-latin-400-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Outfit';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url('../fonts/outfit-latin-500-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Outfit';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url('../fonts/outfit-latin-600-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Outfit';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url('../fonts/outfit-latin-700-normal.woff2') format('woff2');
+}
+
 *,
 *::before,
 *::after {
@@ -1285,4 +1321,17 @@ footer {
 
 .shortcut-copy-btn.copied {
   color: #a3e635;
+}
+
+/* Inline SVG Boxicons */
+.bx-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+}
+.bx-icon svg {
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
 }
