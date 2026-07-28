@@ -46,6 +46,22 @@
   ],
   "projects": [
     {
+      "title": "CapCut Version Manager",
+      "description": "Python utility to manage local CapCut installations. Locks configurations to prevent unexpected updates and maintain workflow stability.",
+      "tags": [
+        {
+          "name": "Python",
+          "color": "blue"
+        },
+        {
+          "name": "Automation",
+          "color": "gray"
+        }
+      ],
+      "image": "/img/project_capcut.webp",
+      "link": "https://github.com/kawishkamd/capcut-update-stop"
+    },
+    {
       "title": "Job Notify",
       "description": "Job alert scraper that pulls listings from LinkedIn, Indeed, and Google Jobs, scores them for relevance, and pushes matches to Telegram. Runs as a systemd service on a Oracle VM with SQLite-based deduplication.",
       "tags": [
