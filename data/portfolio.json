@@ -147,6 +147,24 @@
   ],
   "credentials": [
     {
+      "title": "CCNA: Enterprise Networking, Security, and Automation",
+      "institution": "Cisco",
+      "years": "Jul 2026",
+      "link": "https://www.credly.com/users/kawishkamd"
+    },
+    {
+      "title": "CCNA: Switching, Routing, and Wireless Essentials",
+      "institution": "Cisco",
+      "years": "Jul 2026",
+      "link": "https://www.credly.com/users/kawishkamd"
+    },
+    {
+      "title": "CCNA: Introduction to Networks",
+      "institution": "Cisco",
+      "years": "Sep 2025",
+      "link": "https://www.credly.com/users/kawishkamd"
+    },
+    {
       "title": "KodeKloud Engineer - 100 Days of DevOps",
       "institution": "KodeKloud",
       "years": "Nov 2025",
@@ -161,12 +179,8 @@
     {
       "title": "Multicloud Network Associate",
       "institution": "Aviatrix",
-      "years": "Oct 2025"
-    },
-    {
-      "title": "CCNA: Introduction to Networks",
-      "institution": "Cisco",
-      "years": "Sep 2025"
+      "years": "Oct 2025",
+      "link": "https://www.credly.com/users/kawishkamd"
     },
     {
       "title": "KodeKloud Engineer - Linux",
