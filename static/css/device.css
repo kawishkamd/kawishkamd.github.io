@@ -125,6 +125,9 @@
     z-index: 999;
     border-top: 1px solid var(--border);
     padding: 0.55rem 0.75rem calc(0.55rem + env(safe-area-inset-bottom));
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    will-change: transform;
   }
 
   nav {
