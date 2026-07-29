@@ -732,6 +732,7 @@ h2 {
   bottom: 0;
   left: 0;
   width: 100%;
+  height: 100%;
   padding: 1.5rem;
   background: var(--project-overlay-bg);
   /* Glass Background */
@@ -744,6 +745,7 @@ h2 {
   z-index: 2;
   display: flex;
   flex-direction: column;
+  justify-content: flex-end;
 }
 
 .project-card:hover .project-body {

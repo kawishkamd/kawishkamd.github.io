@@ -56,8 +56,11 @@
 
   <link rel="icon" type="image/png" href="{{ .Site.Params.avatar }}">
   
-  <link rel="stylesheet" href="{{ "css/style.css" | relURL }}?v=1.8">
-  <link rel="stylesheet" href="{{ "css/device.css" | relURL }}?v=1.8">
+  {{ $style := resources.Get "css/style.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}">
+  
+  {{ $deviceStyle := resources.Get "css/device.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $deviceStyle.RelPermalink }}" integrity="{{ $deviceStyle.Data.Integrity }}">
   
   <script>
     (function() {
@@ -169,6 +172,7 @@
   </ul>
 </nav>
 
-<script src="{{ "js/main.js" | relURL }}" defer></script>
+{{ $mainJs := resources.Get "js/main.js" | minify | fingerprint }}
+<script src="{{ $mainJs.RelPermalink }}" integrity="{{ $mainJs.Data.Integrity }}" defer></script>
 </body>
 </html>
