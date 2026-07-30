@@ -1037,6 +1037,30 @@ footer {
   transform: translateY(0);
 }
 
+/* Hero section CSS animation & fallback to prevent NO_FCP Lighthouse error */
+.hero-new .fade-up {
+  opacity: 1;
+  transform: translateY(0);
+  animation: heroFadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.hero-new h1.fade-up { animation-delay: 0s; }
+.hero-new .hero-subtitle-wrap.fade-up { animation-delay: 0.1s; }
+.hero-new .hero-description.fade-up { animation-delay: 0.2s; }
+.hero-new .hero-actions-new.fade-up { animation-delay: 0.3s; }
+.hero-new .hero-image-box.fade-up { animation-delay: 0.2s; }
+.hero-new .scroll-down.fade-up { animation-delay: 0.4s; }
+
+@keyframes heroFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 /* Qualification Styles */
 #qualification {
