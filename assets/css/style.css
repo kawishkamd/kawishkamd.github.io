@@ -382,20 +382,18 @@ nav.nav-hidden {
   overflow: hidden;
   position: relative;
   box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.05);
-  animation: blobAnimate 8s infinite alternate ease-in-out;
+  animation: blobFloat 6s infinite alternate ease-in-out;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   transform: translateZ(0);
-  will-change: border-radius;
 }
 
-@keyframes blobAnimate {
+@keyframes blobFloat {
   0% {
-    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    transform: translateY(0) scale(1);
   }
-
   100% {
-    border-radius: 40% 60% 70% 30% / 30% 70% 40% 60%;
+    transform: translateY(-10px) scale(1.02);
   }
 }
 
