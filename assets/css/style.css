@@ -371,19 +371,10 @@ nav.nav-hidden {
   overflow: hidden;
   position: relative;
   box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.05);
-  animation: blobFloat 6s infinite alternate ease-in-out;
+  animation: blobMorph 8s infinite alternate ease-in-out;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   transform: translateZ(0);
-}
-
-@keyframes blobFloat {
-  0% {
-    transform: translateY(0) scale(1);
-  }
-  100% {
-    transform: translateY(-10px) scale(1.02);
-  }
 }
 
 .blob-mask img {
@@ -394,10 +385,31 @@ nav.nav-hidden {
   transition: filter 0.5s ease;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+  /* Counter-rotate the image so the face stays upright while the blob spins */
+  animation: blobMorphImage 8s infinite alternate ease-in-out;
+  transform: scale(1.15); /* Slightly scale up to prevent clipping during rotation */
 }
 
 .blob-mask:hover img {
   filter: grayscale(0);
+}
+
+@keyframes blobMorph {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  100% {
+    transform: rotate(12deg) scale(1.04);
+  }
+}
+
+@keyframes blobMorphImage {
+  0% {
+    transform: rotate(0deg) scale(1.15);
+  }
+  100% {
+    transform: rotate(-12deg) scale(1.15);
+  }
 }
 
 
