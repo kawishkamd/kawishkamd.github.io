@@ -3,13 +3,13 @@
   <div class="hero-container">
     <div class="hero-socials">
       {{ if .Site.Params.linkedin }}
-      <a href="{{ .Site.Params.linkedin }}" target="_blank"><span class="bx-icon" >{{ partial "icon/bxl-linkedin.html" . }}</span></a>
+      <a href="{{ .Site.Params.linkedin }}" target="_blank" aria-label="LinkedIn"><span class="bx-icon" >{{ partial "icon/bxl-linkedin.html" . }}</span></a>
       {{ end }}
       {{ if .Site.Params.github }}
-      <a href="{{ .Site.Params.github }}" target="_blank"><span class="bx-icon" >{{ partial "icon/bxl-github.html" . }}</span></a>
+      <a href="{{ .Site.Params.github }}" target="_blank" aria-label="GitHub"><span class="bx-icon" >{{ partial "icon/bxl-github.html" . }}</span></a>
       {{ end }}
       {{ if .Site.Params.youtube }}
-      <a href="{{ .Site.Params.youtube }}" target="_blank"><span class="bx-icon" >{{ partial "icon/bxl-youtube.html" . }}</span></a>
+      <a href="{{ .Site.Params.youtube }}" target="_blank" aria-label="YouTube"><span class="bx-icon" >{{ partial "icon/bxl-youtube.html" . }}</span></a>
       {{ end }}
     </div>
 
@@ -61,7 +61,7 @@
         <h2>{{ .Site.Params.about_title }}</h2>
         <p>{{ .Site.Params.about_description_1 }}</p>
         <p>{{ .Site.Params.about_description_2 }}</p>
-        <h4 style="color: var(--muted); margin-top: 1.5rem; margin-bottom: 1.25rem;">Technologies and Skills</h4>
+        <h3 style="color: var(--muted); margin-top: 1.5rem; margin-bottom: 1.25rem; font-size: 1rem;">Technologies and Skills</h3>
         <div class="skills-grouped">
           {{ range .Site.Data.portfolio.tags }}
           <div class="skill-category-wrap" style="margin-bottom: 0.75rem;">
