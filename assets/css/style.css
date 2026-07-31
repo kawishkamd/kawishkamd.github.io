@@ -54,6 +54,7 @@ a:focus-visible {
 
 :root {
   --red: #0ea5e9;
+  --red-text: #0369a1; /* WCAG AA accessible contrast against white */
   --red-light: #e0f2fe;
   --black: #0f0e0e;
   --muted: #6b6b6b;
@@ -88,7 +89,8 @@ html.dark-mode {
   --bg: #09090b;
   --surface: #121214;
   --red-light: rgba(14, 165, 233, 0.15);
-
+  --red-text: var(--red);
+  
   --nav-bg: rgba(9, 9, 11, 0.92);
   --card-bg: #18181b;
   --code-bg: #1e1e24;
@@ -495,7 +497,7 @@ section {
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--red);
+  color: var(--red-text);
   margin-bottom: 1rem;
 }
 
