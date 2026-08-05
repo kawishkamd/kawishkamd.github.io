@@ -201,10 +201,6 @@
     color: var(--black);
   }
 
-  .mobile-nav-indicator {
-    display: none;
-  }
-
   footer {
     display: none;
   }
