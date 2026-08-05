@@ -270,30 +270,12 @@ window.observer = new IntersectionObserver((entries) => {
 
   // Theme Toggle Button Logic
   const themeToggle = document.getElementById('theme-toggle');
-  const iconMoon = document.getElementById('theme-toggle-moon');
-  const iconSun = document.getElementById('theme-toggle-sun');
-
-  function updateThemeIcons(isDark) {
-    if (iconMoon && iconSun) {
-      if (isDark) {
-        iconMoon.style.display = 'none';
-        iconSun.style.display = 'inline-flex';
-      } else {
-        iconMoon.style.display = 'inline-flex';
-        iconSun.style.display = 'none';
-      }
-    }
-  }
-
-  // Initialize icon state on load based on class presence
-  updateThemeIcons(document.documentElement.classList.contains('dark-mode'));
 
   if (themeToggle) {
     themeToggle.addEventListener('click', () => {
       document.documentElement.classList.toggle('dark-mode');
       const isDark = document.documentElement.classList.contains('dark-mode');
       localStorage.setItem('theme', isDark ? 'dark' : 'light');
-      updateThemeIcons(isDark);
     });
   }
 

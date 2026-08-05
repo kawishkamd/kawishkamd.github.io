@@ -188,6 +188,16 @@ nav.nav-hidden {
   color: var(--red);
 }
 
+html:not(.dark-mode) #theme-toggle-sun,
+html.dark-mode #theme-toggle-moon {
+  display: none;
+}
+
+html.dark-mode #theme-toggle-sun,
+html:not(.dark-mode) #theme-toggle-moon {
+  display: inline-flex;
+}
+
 .nav-logo {
   font-size: 15px;
   font-weight: 600;
