@@ -120,14 +120,11 @@
     left: 0;
     width: 100%;
     min-height: 78px;
-    background: var(--card-bg);
+    background-color: var(--card-bg);
     box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.08);
     z-index: 999;
     border-top: 1px solid var(--border);
     padding: 0.55rem 0.75rem calc(0.55rem + env(safe-area-inset-bottom));
-    -webkit-transform: translateZ(0);
-    transform: translateZ(0);
-    will-change: transform;
   }
 
   nav {
@@ -170,7 +167,7 @@
     padding: 0.45rem 0.2rem 0.35rem;
     position: relative;
     border-radius: 16px;
-    transition: background 0.2s ease, color 0.2s ease;
+    transition: background-color 0.2s ease, color 0.2s ease;
   }
 
   .mobile-nav-link i, .mobile-nav-link .bx-icon {
@@ -193,7 +190,7 @@
 
   .mobile-nav-link.active {
     color: var(--black);
-    background: var(--red-light);
+    background-color: var(--red-light);
   }
 
   .mobile-nav-link.active i, .mobile-nav-link.active .bx-icon {
