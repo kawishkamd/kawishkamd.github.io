@@ -290,26 +290,10 @@ window.observer = new IntersectionObserver((entries) => {
 
   if (themeToggle) {
     themeToggle.addEventListener('click', () => {
-      document.documentElement.classList.add('theme-transition');
-      
-      requestAnimationFrame(() => {
-        document.documentElement.classList.toggle('dark-mode');
-        const isDark = document.documentElement.classList.contains('dark-mode');
-        localStorage.setItem('theme', isDark ? 'dark' : 'light');
-        
-        updateThemeIcons(isDark);
-
-        let cleanedUp = false;
-        const cleanupTransition = () => {
-          if (!cleanedUp) {
-            cleanedUp = true;
-            document.documentElement.classList.remove('theme-transition');
-          }
-        };
-
-        document.body.addEventListener('transitionend', cleanupTransition, { once: true });
-        setTimeout(cleanupTransition, 320);
-      });
+      document.documentElement.classList.toggle('dark-mode');
+      const isDark = document.documentElement.classList.contains('dark-mode');
+      localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      updateThemeIcons(isDark);
     });
   }
 
