@@ -154,8 +154,6 @@ window.observer = new IntersectionObserver((entries) => {
 
   // Mobile Navigation Logic
   const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
-  const indicator = document.querySelector('.mobile-nav-indicator');
-  const navList = document.querySelector('.mobile-nav-list');
   const topNavLinks = document.querySelectorAll('.nav-links a');
   const trackedSectionIds = ['about', 'skills', 'projects', 'qualification', 'shortcuts', 'contact'];
   const trackedSections = trackedSectionIds
@@ -163,25 +161,10 @@ window.observer = new IntersectionObserver((entries) => {
     .filter(section => section.element);
   let ticking = false;
 
-  function updateIndicator(activeLink) {
-    if (!activeLink || !indicator || !navList) return;
-    if (indicator.offsetParent === null) return;
-    const linkRect = activeLink.getBoundingClientRect();
-    const navRect = navList.getBoundingClientRect();
-    const offset = linkRect.left - navRect.left + (linkRect.width / 2) - 25;
-    indicator.style.transform = `translateX(${offset}px)`;
-  }
-
-  setTimeout(() => {
-    const defaultActive = document.querySelector('.mobile-nav-link.active');
-    if (defaultActive) updateIndicator(defaultActive);
-  }, 100);
-
   mobileNavLinks.forEach(link => {
     link.addEventListener('click', function() {
       mobileNavLinks.forEach(l => l.classList.remove('active'));
       this.classList.add('active');
-      updateIndicator(this);
     });
   });
 
@@ -209,7 +192,6 @@ window.observer = new IntersectionObserver((entries) => {
       if (activeLink && !activeLink.classList.contains('active')) {
         mobileNavLinks.forEach(l => l.classList.remove('active'));
         activeLink.classList.add('active');
-        updateIndicator(activeLink);
       }
 
       const topActiveLink = document.querySelector(`.nav-links a[href="#${current}"]`);
@@ -262,8 +244,6 @@ window.observer = new IntersectionObserver((entries) => {
 
   window.addEventListener('resize', () => {
     syncActiveNavState();
-    const activeLink = document.querySelector('.mobile-nav-link.active');
-    if (activeLink) updateIndicator(activeLink);
   });
 
   syncActiveNavState();
