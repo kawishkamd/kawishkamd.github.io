@@ -75,10 +75,29 @@ a:focus-visible {
 }
 
 html.theme-transition,
-html.theme-transition *,
-html.theme-transition *::before,
-html.theme-transition *::after {
-  transition: background-color 0.3s ease, background 0.3s ease, color 0.3s ease, border-color 0.3s ease, fill 0.3s ease, stroke 0.3s ease !important;
+html.theme-transition body,
+html.theme-transition nav,
+html.theme-transition .mobile-nav,
+html.theme-transition .mobile-nav-link,
+html.theme-transition .mobile-nav-link span,
+html.theme-transition .mobile-nav-link .bx-icon,
+html.theme-transition section,
+html.theme-transition footer,
+html.theme-transition a,
+html.theme-transition button,
+html.theme-transition input,
+html.theme-transition textarea,
+html.theme-transition div,
+html.theme-transition span,
+html.theme-transition p,
+html.theme-transition h1,
+html.theme-transition h2,
+html.theme-transition h3,
+html.theme-transition h4,
+html.theme-transition h5,
+html.theme-transition h6,
+html.theme-transition li {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease !important;
   transition-delay: 0s !important;
 }
 
