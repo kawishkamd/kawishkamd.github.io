@@ -165,6 +165,7 @@ window.observer = new IntersectionObserver((entries) => {
 
   function updateIndicator(activeLink) {
     if (!activeLink || !indicator || !navList) return;
+    if (indicator.offsetParent === null) return;
     const linkRect = activeLink.getBoundingClientRect();
     const navRect = navList.getBoundingClientRect();
     const offset = linkRect.left - navRect.left + (linkRect.width / 2) - 25;
@@ -298,9 +299,16 @@ window.observer = new IntersectionObserver((entries) => {
         
         updateThemeIcons(isDark);
 
-        setTimeout(() => {
-          document.documentElement.classList.remove('theme-transition');
-        }, 300);
+        let cleanedUp = false;
+        const cleanupTransition = () => {
+          if (!cleanedUp) {
+            cleanedUp = true;
+            document.documentElement.classList.remove('theme-transition');
+          }
+        };
+
+        document.body.addEventListener('transitionend', cleanupTransition, { once: true });
+        setTimeout(cleanupTransition, 320);
       });
     });
   }
