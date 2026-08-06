@@ -2,6 +2,8 @@ baseURL = 'https://kawishkamd.github.io/'
 languageCode = 'en-us'
 title = 'Kawishka'
 enableRobotsTXT = true
+enableGitInfo = true
+buildFuture = true
 
 [params]
   author = "Kawishka Dahanayaka"
