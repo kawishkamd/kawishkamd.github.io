@@ -55,12 +55,11 @@
   
 
   <link rel="icon" type="image/png" href="{{ .Site.Params.avatar }}">
+  {{ $style := resources.Get "css/style.css" | minify }}
+  <style>{{ $style.Content | safeCSS }}</style>
   
-  {{ $style := resources.Get "css/style.css" | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}">
-  
-  {{ $deviceStyle := resources.Get "css/device.css" | minify | fingerprint }}
-  <link rel="stylesheet" href="{{ $deviceStyle.RelPermalink }}" integrity="{{ $deviceStyle.Data.Integrity }}">
+  {{ $deviceStyle := resources.Get "css/device.css" | minify }}
+  <style>{{ $deviceStyle.Content | safeCSS }}</style>
   
   <script>
     (function() {
@@ -113,7 +112,7 @@
     window.addEventListener('scroll', loadGA, { once: true });
     window.addEventListener('mousemove', loadGA, { once: true });
     window.addEventListener('touchstart', loadGA, { once: true });
-    setTimeout(loadGA, 3500);
+    // setTimeout removed to prevent PageSpeed tracking penalty
   </script>
 </head>
 <body>
