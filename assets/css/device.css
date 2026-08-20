@@ -2,7 +2,7 @@
 
 @media (max-width: 1024px) {
   .hero-container {
-    grid-template-columns: 60px 1.2fr 1fr;
+    grid-template-columns: 60px 1.2fr 1fr 60px;
   }
 }
 

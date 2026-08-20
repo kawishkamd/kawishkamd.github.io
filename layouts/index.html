@@ -63,7 +63,7 @@
         <p>{{ .Site.Params.about_description_2 }}</p>
         <h3 style="color: var(--muted); margin-top: 1.5rem; margin-bottom: 1.25rem; font-size: 1rem;">Technologies and Skills</h3>
         <div class="skills-grouped">
-          {{ range .Site.Data.portfolio.tags }}
+          {{ range hugo.Data.portfolio.tags }}
           <div class="skill-category-wrap" style="margin-bottom: 0.75rem;">
             <div class="about-tags" style="display: flex; flex-wrap: wrap; gap: 8px;">
               {{ range .items }}
@@ -90,7 +90,7 @@
         architecture, and infrastructure.</p>
     </div>
     <div class="skills-grid">
-      {{ range .Site.Data.portfolio.skills }}
+      {{ range hugo.Data.portfolio.skills }}
       <div class="skill-card fade-up">
         <div class="skill-icon">
           {{ .icon | safeHTML }}
@@ -114,7 +114,7 @@
 
     </div>
     <div class="projects-grid">
-      {{ range .Site.Data.portfolio.projects }}
+      {{ range hugo.Data.portfolio.projects }}
       <div class="project-card fade-up">
         <div class="project-thumb"><img src="{{ .image | relURL }}" alt="{{ .title }} project preview" class="project-img" loading="lazy" width="1280" height="720"></div>
         <div class="project-body">
@@ -156,7 +156,7 @@
 
       <div class="qualification-content active" id="credentials">
         <div class="qualification-list">
-          {{ range .Site.Data.portfolio.credentials }}
+          {{ range hugo.Data.portfolio.credentials }}
           <div class="qualification-card">
             <div class="qualification-info">
               <h3 class="qualification-title">{{ .title }}</h3>
@@ -180,7 +180,7 @@
 
       <div class="qualification-content" id="experience">
         <div class="qualification-list">
-          {{ range .Site.Data.portfolio.experience }}
+          {{ range hugo.Data.portfolio.experience }}
           <div class="qualification-card">
             <div class="qualification-info">
               <h3 class="qualification-title">{{ .title }}</h3>
