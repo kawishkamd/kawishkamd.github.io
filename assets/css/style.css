@@ -290,7 +290,7 @@ html:not(.dark-mode) #theme-toggle-moon {
   width: 100%;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: 80px 1fr 1fr;
+  grid-template-columns: 80px 1fr 1fr 80px;
   align-items: center;
   gap: 60px;
 }
@@ -435,9 +435,10 @@ html:not(.dark-mode) #theme-toggle-moon {
 .scroll-down {
   position: absolute;
   bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
+  width: 100%;
   display: flex;
+  justify-content: center;
   align-items: center;
   gap: 15px;
   color: var(--muted);
