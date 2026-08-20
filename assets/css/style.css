@@ -175,9 +175,9 @@ nav.nav-hidden {
   font-size: 1.35rem;
   color: var(--black);
   cursor: pointer;
-  display: flex;
+  display: grid;
   align-items: center;
-  justify-content: center;
+  justify-items: center;
   padding: 8px;
   border-radius: 50%;
   transition: all 0.2s ease;
@@ -188,14 +188,31 @@ nav.nav-hidden {
   color: var(--red);
 }
 
-html:not(.dark-mode) #theme-toggle-sun,
-html.dark-mode #theme-toggle-moon {
-  display: none;
+#theme-toggle-sun,
+#theme-toggle-moon {
+  grid-area: 1 / 1;
+  display: inline-flex;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-html.dark-mode #theme-toggle-sun,
+html:not(.dark-mode) #theme-toggle-sun {
+  opacity: 0;
+  transform: rotate(90deg) scale(0);
+}
+
 html:not(.dark-mode) #theme-toggle-moon {
-  display: inline-flex;
+  opacity: 1;
+  transform: rotate(0) scale(1);
+}
+
+html.dark-mode #theme-toggle-sun {
+  opacity: 1;
+  transform: rotate(0) scale(1);
+}
+
+html.dark-mode #theme-toggle-moon {
+  opacity: 0;
+  transform: rotate(-90deg) scale(0);
 }
 
 .nav-logo {
