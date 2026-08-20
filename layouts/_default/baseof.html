@@ -23,6 +23,8 @@
   {{ $imageAlt := cond $isHome $author (.Title | default $author) }}
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#09090b" media="(prefers-color-scheme: dark)">
   <title>{{ .Params.seo_title | default $pageTitle }}</title>
   <meta name="google-site-verification" content="aazd-La0XB36nn6FYbJMks7xIWw906FRVPfjI9DGyH0" />
   
@@ -63,7 +65,8 @@
   
   <script>
     (function() {
-      if (localStorage.getItem('theme') === 'dark') {
+      const storedTheme = localStorage.getItem('theme');
+      if (storedTheme === 'dark' || (!storedTheme && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
         document.documentElement.classList.add('dark-mode');
       }
     })();
