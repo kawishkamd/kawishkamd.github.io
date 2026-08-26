@@ -116,20 +116,6 @@
       ],
       "image": "/img/project_phantom.webp",
       "link": "https://phantomtools.vercel.app"
-    },
-    {
-      "title": "Mad Mobile.Store",
-      "description": "Gaming hardware, creator tools, and digital products marketplace.",
-      "tags": [
-        {
-          "name": "Linux"
-        },
-        {
-          "name": "WordPress"
-        }
-      ],
-      "image": "/img/project_madmobile.webp",
-      "link": "https://madmobile.rf.gd"
     }
   ],
   "credentials": [
@@ -156,12 +142,6 @@
       "institution": "KodeKloud",
       "years": "Nov 2025",
       "link": "https://kodekloud.com/certificate-verification/28bbfd88-630f-451a-8f5b-85456e4ef302"
-    },
-    {
-      "title": "KodeKloud Engineer - Kubernetes (Level 1)",
-      "institution": "KodeKloud",
-      "years": "Oct 2025",
-      "link": "https://kodekloud.com/certificate-verification/23617e00-0112-4953-8369-867dc720d8f9"
     },
     {
       "title": "Multicloud Network Associate",
