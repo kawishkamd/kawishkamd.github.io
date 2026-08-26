@@ -1,6 +1,8 @@
 /* Responsive Styles for Devices */
 
 @media (max-width: 1024px) {
+  .mouse { display: none; }
+
   .hero-container {
     grid-template-columns: 60px 1.2fr 1fr 60px;
   }
@@ -15,6 +17,8 @@
   .hero-new {
     padding-top: 100px;
   }
+
+  .mouse { display: none; }
 
   .hero-container {
     grid-template-columns: 1fr;
