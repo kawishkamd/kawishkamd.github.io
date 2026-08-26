@@ -65,13 +65,10 @@ a:focus-visible {
 
   --nav-bg: rgba(255, 255, 255, 0.92);
   --card-bg: #ffffff;
-  --code-bg: #f4f4f4;
   --cta-bg: #0f0e0e;
   --cta-fg: #ffffff;
   --project-overlay-bg: rgba(255, 255, 255, 0.88);
   --project-overlay-border: rgba(255, 255, 255, 0.8);
-  --project-tag-muted-bg: #f0eeeb;
-  --project-tag-muted-fg: #5a5a5a;
 }
 
 body,
@@ -98,13 +95,10 @@ html.dark-mode {
   
   --nav-bg: rgba(9, 9, 11, 0.92);
   --card-bg: #18181b;
-  --code-bg: #1e1e24;
   --cta-bg: #f3f4f6;
   --cta-fg: #09090b;
   --project-overlay-bg: rgba(9, 9, 11, 0.88);
   --project-overlay-border: rgba(255, 255, 255, 0.08);
-  --project-tag-muted-bg: rgba(255, 255, 255, 0.08);
-  --project-tag-muted-fg: #d4d4d8;
 }
 
 html {
@@ -402,10 +396,6 @@ html.dark-mode #theme-toggle-moon {
   overflow: hidden;
   position: relative;
   box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.05);
-  animation: blobMorph 8s infinite alternate ease-in-out;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  transform: translateZ(0);
 }
 
 .blob-mask img {
@@ -414,33 +404,10 @@ html.dark-mode #theme-toggle-moon {
   object-fit: cover;
   filter: grayscale(1);
   transition: filter 0.5s ease;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  /* Counter-rotate the image so the face stays upright while the blob spins */
-  animation: blobMorphImage 8s infinite alternate ease-in-out;
-  transform: scale(1.15); /* Slightly scale up to prevent clipping during rotation */
 }
 
 .blob-mask:hover img {
   filter: grayscale(0);
-}
-
-@keyframes blobMorph {
-  0% {
-    transform: rotate(0deg) scale(1);
-  }
-  100% {
-    transform: rotate(12deg) scale(1.04);
-  }
-}
-
-@keyframes blobMorphImage {
-  0% {
-    transform: rotate(0deg) scale(1.15);
-  }
-  100% {
-    transform: rotate(-12deg) scale(1.15);
-  }
 }
 
 
@@ -784,12 +751,6 @@ h2 {
   padding: 3px 9px;
   border-radius: 4px;
 }
-
-.project-tag.red {
-  background: var(--red-light);
-  color: var(--red);
-}
-
 
 .project-body h3 {
   font-size: 17px;

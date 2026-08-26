@@ -95,10 +95,6 @@
     margin: 0 auto;
   }
 
-  .about-chip {
-    right: 0;
-  }
-
   .skills-header,
   .projects-header {
     flex-direction: column;

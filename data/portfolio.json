@@ -50,12 +50,10 @@
       "description": "Python utility to manage local CapCut installations. Locks configurations to prevent unexpected updates and maintain workflow stability.",
       "tags": [
         {
-          "name": "Python",
-          "color": "blue"
+          "name": "Python"
         },
         {
-          "name": "Automation",
-          "color": "gray"
+          "name": "Automation"
         }
       ],
       "image": "/img/project_capcut.webp",
@@ -66,16 +64,13 @@
       "description": "Job alert scraper that pulls listings from LinkedIn, Indeed, and Google Jobs, scores them for relevance, and pushes matches to Telegram. Runs as a systemd service on a Oracle VM with SQLite-based deduplication.",
       "tags": [
         {
-          "name": "Python",
-          "color": "blue"
+          "name": "Python"
         },
         {
-          "name": "SQLite",
-          "color": "gray"
+          "name": "SQLite"
         },
         {
-          "name": "Bash",
-          "color": "gray"
+          "name": "Bash"
         }
       ],
       "image": "/img/project_jobnotify.webp"
@@ -85,12 +80,10 @@
       "description": "Chrome extension and CLI toolkit for Dialog Axiata router management.",
       "tags": [
         {
-          "name": "Bash",
-          "color": "green"
+          "name": "Bash"
         },
         {
-          "name": "JavaScript",
-          "color": "gray"
+          "name": "JavaScript"
         }
       ],
       "image": "/img/project_router_tools.webp",
@@ -101,12 +94,10 @@
       "description": "A Python tool for converting Sinhala Unicode text to legacy font formats.",
       "tags": [
         {
-          "name": "Python",
-          "color": "blue"
+          "name": "Python"
         },
         {
-          "name": "GUI",
-          "color": "gray"
+          "name": "GUI"
         }
       ],
       "image": "/img/project_sinhala.webp",
@@ -117,12 +108,10 @@
       "description": "Free tools to solve everyday problems fast.",
       "tags": [
         {
-          "name": "React",
-          "color": "blue"
+          "name": "React"
         },
         {
-          "name": "TypeScript",
-          "color": "gray"
+          "name": "TypeScript"
         }
       ],
       "image": "/img/project_phantom.webp",
@@ -133,12 +122,10 @@
       "description": "Gaming hardware, creator tools, and digital products marketplace.",
       "tags": [
         {
-          "name": "Linux",
-          "color": "blue"
+          "name": "Linux"
         },
         {
-          "name": "WordPress",
-          "color": "gray"
+          "name": "WordPress"
         }
       ],
       "image": "/img/project_madmobile.webp",
