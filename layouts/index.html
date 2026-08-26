@@ -113,21 +113,27 @@
       </div>
 
     </div>
-    <div class="projects-grid">
+    <div class="projects-list">
       {{ range hugo.Data.portfolio.projects }}
-      <div class="project-card fade-up">
-        <div class="project-thumb"><img src="{{ .image | relURL }}" alt="{{ .title }} project preview" class="project-img" loading="lazy" width="1280" height="720"></div>
-        <div class="project-body">
-          <div class="project-tags">
-            {{ range .tags }}
-            <span class="project-tag">{{ .name }}</span>
+      <div class="project-item fade-up">
+        <div class="project-item-thumb">
+          <img src="{{ .image | relURL }}" alt="{{ .title }} project preview" class="project-item-img" loading="lazy" width="1280" height="720">
+        </div>
+        <div class="project-item-content">
+          <div class="project-item-header">
+            <h3>{{ .title }}</h3>
+            {{ if .link }}
+            <a href="{{ .link }}" target="_blank" rel="noopener noreferrer" aria-label="View {{ .title }}" title="View Project">
+              <span class="bx-icon" style="font-size: 20px;">{{ partial "icon/bx-link-external.html" . }}</span>
+            </a>
             {{ end }}
           </div>
-          <h3>{{ .title }}</h3>
-          <p>{{ .description }}</p>
-          {{ if .link }}
-          <a href="{{ .link }}" class="project-link" target="_blank">View Project →</a>
-          {{ end }}
+          <p class="project-item-desc">{{ .description }}</p>
+          <div class="project-item-tags">
+            {{ range .tags }}
+            <span class="tag">{{ .name }}</span>
+            {{ end }}
+          </div>
         </div>
       </div>
       {{ end }}
@@ -141,20 +147,12 @@
     <h2 class="">Credentials & Experience</h2>
 
 
-    <div class="qualification-tabs fade-up">
-      <div class="qualification-btn active" data-target="#credentials">
-        <span class="bx-icon" >{{ partial "icon/bx-award.html" . }}</span>
-        Credentials
-      </div>
-      <div class="qualification-btn" data-target="#experience">
-        <span class="bx-icon" >{{ partial "icon/bx-briefcase-alt.html" . }}</span>
-        Experience
-      </div>
-    </div>
+    <div class="qualification-sections fade-up" style="display: flex; flex-direction: column; gap: 4rem; margin-top: 3rem;">
 
-    <div class="qualification-sections fade-up">
-
-      <div class="qualification-content active" id="credentials">
+      <div class="qualification-content" id="credentials">
+        <h3 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 10px;">
+          <span class="bx-icon" style="color: var(--red);">{{ partial "icon/bx-award.html" . }}</span> Credentials
+        </h3>
         <div class="qualification-list">
           {{ range hugo.Data.portfolio.credentials }}
           <div class="qualification-card">
@@ -179,6 +177,9 @@
       </div>
 
       <div class="qualification-content" id="experience">
+        <h3 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 10px;">
+          <span class="bx-icon" style="color: var(--red);">{{ partial "icon/bx-briefcase-alt.html" . }}</span> Experience
+        </h3>
         <div class="qualification-list">
           {{ range hugo.Data.portfolio.experience }}
           <div class="qualification-card">
