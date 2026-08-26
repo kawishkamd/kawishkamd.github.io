@@ -395,7 +395,6 @@ html.dark-mode #theme-toggle-moon {
   border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
   overflow: hidden;
   position: relative;
-  box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.05);
 }
 
 .blob-mask img {
