@@ -61,7 +61,7 @@
     },
     {
       "title": "Job Notify",
-      "description": "Job alert scraper that pulls listings from LinkedIn, Indeed, and Google Jobs, scores them for relevance, and pushes matches to Telegram. Runs as a systemd service on a Oracle VM with SQLite-based deduplication.",
+      "description": "Job alert scraper that pulls listings from LinkedIn, Indeed, and Google Jobs, scores them for relevance, and pushes matches to Telegram. Runs as a systemd service on an Oracle VM with SQLite-based deduplication.",
       "tags": [
         {
           "name": "Python"
