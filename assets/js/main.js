@@ -168,52 +168,49 @@ window.observer = new IntersectionObserver((entries) => {
     });
   });
 
-  function syncActiveNavState() {
-    let current = '';
-    const scrollY = window.scrollY;
+  // IntersectionObserver for extremely fast, zero-reflow scroll tracking
+  const observerOptions = {
+    root: null,
+    rootMargin: '-20% 0px -70% 0px', // Triggers when section is comfortably in the top half of viewport
+    threshold: 0
+  };
 
-    trackedSections.forEach(({ id, element }) => {
-      const sectionTop = element.offsetTop - 150;
-      const sectionHeight = element.offsetHeight;
-      if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-        current = id;
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const current = entry.target.id;
+        
+        // Map 'shortcuts' to 'qualification' (Journey) for mobile menu only
+        const mobileCurrent = current === 'shortcuts' ? 'qualification' : current;
+        const activeLink = document.querySelector(`.mobile-nav-link[data-target="${mobileCurrent}"]`);
+        if (activeLink && !activeLink.classList.contains('active')) {
+          mobileNavLinks.forEach(l => l.classList.remove('active'));
+          activeLink.classList.add('active');
+        }
+
+        const topActiveLink = document.querySelector(`.nav-links a[href="#${current}"]`);
+        if (topActiveLink && !topActiveLink.classList.contains('active')) {
+          topNavLinks.forEach(l => l.classList.remove('active'));
+          topActiveLink.classList.add('active');
+        }
+
+        // Update URL hash dynamically on scroll without page jump
+        if (window.scrollY < 300) {
+          if (window.location.hash) {
+            history.replaceState(null, null, window.location.pathname + window.location.search);
+          }
+        } else {
+          if (window.location.hash !== '#' + current) {
+            history.replaceState(null, null, '#' + current);
+          }
+        }
       }
     });
+  }, observerOptions);
 
-    // Default to 'about' if near the top of the page (Hero section)
-    if (!current && scrollY < 300) {
-      current = 'about';
-    }
-
-    if (current) {
-      // Map 'shortcuts' to 'qualification' (Journey) for mobile menu only
-      const mobileCurrent = current === 'shortcuts' ? 'qualification' : current;
-      const activeLink = document.querySelector(`.mobile-nav-link[data-target="${mobileCurrent}"]`);
-      if (activeLink && !activeLink.classList.contains('active')) {
-        mobileNavLinks.forEach(l => l.classList.remove('active'));
-        activeLink.classList.add('active');
-      }
-
-      const topActiveLink = document.querySelector(`.nav-links a[href="#${current}"]`);
-      if (topActiveLink && !topActiveLink.classList.contains('active')) {
-        topNavLinks.forEach(l => l.classList.remove('active'));
-        topActiveLink.classList.add('active');
-      }
-
-      // Update URL hash dynamically on scroll without page jump
-      if (scrollY < 300) {
-        // At the top/Hero section: clear the hash
-        if (window.location.hash) {
-          history.replaceState(null, null, window.location.pathname + window.location.search);
-        }
-      } else {
-        // Inside a section: update hash to match current section
-        if (window.location.hash !== '#' + current) {
-          history.replaceState(null, null, '#' + current);
-        }
-      }
-    }
-  }
+  trackedSections.forEach(({ element }) => {
+    navObserver.observe(element);
+  });
 
   let lastScrollY = window.scrollY;
   const topHeader = document.querySelector('nav:not(.mobile-nav)');
@@ -223,8 +220,6 @@ window.observer = new IntersectionObserver((entries) => {
     ticking = true;
 
     window.requestAnimationFrame(() => {
-      syncActiveNavState();
-
       const scrollY = window.scrollY;
       if (topHeader) {
         if (scrollY <= 50) {
@@ -241,12 +236,6 @@ window.observer = new IntersectionObserver((entries) => {
   }
 
   window.addEventListener('scroll', handleScroll, { passive: true });
-
-  window.addEventListener('resize', () => {
-    syncActiveNavState();
-  });
-
-  syncActiveNavState();
 
   // Theme Toggle Button Logic
   const themeToggle = document.getElementById('theme-toggle');
