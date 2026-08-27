@@ -161,7 +161,7 @@
               <span class="qualification-subtitle">
                 {{ .institution }}
                 {{ if .link }}
-                <a href="{{ .link }}" target="_blank" rel="noopener noreferrer" style="color: var(--red); margin-left: 6px; display: inline-flex; align-items: center; vertical-align: middle;" title="View Credential">
+                <a href="{{ .link }}" target="_blank" rel="noopener noreferrer" aria-label="View credential: {{ .title }} ({{ .institution }})" style="color: var(--red); margin-left: 6px; display: inline-flex; align-items: center; vertical-align: middle;" title="View Credential">
                   <span class="bx-icon" style="font-size: 14px;">{{ partial "icon/bx-link-external.html" . }}</span>
                 </a>
                 {{ end }}
