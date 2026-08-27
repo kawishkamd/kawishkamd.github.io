@@ -1270,3 +1270,33 @@ footer {
   height: 1em;
   fill: currentColor;
 }
+/* Contact form live status (announced to screen readers) + honeypot field */
+.form-status {
+  min-height: 1.4em;
+  margin-top: 0.75rem;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+.hp-field {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

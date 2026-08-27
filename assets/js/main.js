@@ -1,16 +1,20 @@
-window.observer = new IntersectionObserver((entries) => {
+const REDUCED_MOTION = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+const fadeObserver = new IntersectionObserver((entries) => {
     entries.forEach((e, i) => {
       if (e.isIntersecting) {
         setTimeout(() => e.target.classList.add('visible'), i * 80);
       }
     });
   }, { threshold: 0.1 });
-  document.querySelectorAll('.fade-up').forEach(el => window.observer.observe(el));
+  document.querySelectorAll('.fade-up').forEach(el => fadeObserver.observe(el));
 
   // Enable smooth scroll after initial load/render to prevent jumpiness on reload
-  setTimeout(() => {
-    document.documentElement.style.scrollBehavior = 'smooth';
-  }, 250);
+  if (!REDUCED_MOTION) {
+    setTimeout(() => {
+      document.documentElement.style.scrollBehavior = 'smooth';
+    }, 250);
+  }
 
   // Helper to check if a link points to the same page with a hash
   function isAnchorLinkToCurrentPage(a) {
@@ -40,7 +44,13 @@ window.observer = new IntersectionObserver((entries) => {
     ) return;
 
     a.addEventListener('click', e => {
+      // Respect modified clicks (open in new tab/window) and non-left clicks
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || e.button !== 0) return;
       e.preventDefault();
+      if (REDUCED_MOTION) {
+        window.location.href = a.href;
+        return;
+      }
       document.body.classList.add('page-exit');
       const targetUrl = a.href; // Use resolved absolute URL
       setTimeout(() => { window.location.href = targetUrl; }, 260);
@@ -65,7 +75,7 @@ window.observer = new IntersectionObserver((entries) => {
 
             window.scrollTo({
               top: offsetPosition,
-              behavior: 'smooth'
+              behavior: REDUCED_MOTION ? 'auto' : 'smooth'
             });
             // Update URL hash without a page reload
             history.pushState(null, null, url.hash);
@@ -100,6 +110,8 @@ window.observer = new IntersectionObserver((entries) => {
 
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {
+    const formStatus = document.getElementById('form-status');
+
     contactForm.addEventListener('submit', async function(e) {
       e.preventDefault();
 
@@ -107,6 +119,7 @@ window.observer = new IntersectionObserver((entries) => {
       const originalText = sendBtn.textContent;
 
       sendBtn.textContent = 'Sending...';
+      if (formStatus) formStatus.textContent = 'Sending...';
       sendBtn.disabled = true;
 
       const formData = new FormData(this);
@@ -123,16 +136,20 @@ window.observer = new IntersectionObserver((entries) => {
         if (response.ok) {
           this.reset();
           sendBtn.textContent = 'Message Sent ✓';
+          if (formStatus) formStatus.textContent = 'Message sent! I will get back to you soon.';
         } else {
           sendBtn.textContent = 'Error! Try again.';
+          if (formStatus) formStatus.textContent = 'Something went wrong. Please try again.';
         }
       } catch (error) {
         sendBtn.textContent = 'Error! Try again.';
+        if (formStatus) formStatus.textContent = 'Something went wrong. Please try again.';
       }
 
       setTimeout(() => {
         sendBtn.textContent = originalText;
         sendBtn.disabled = false;
+        if (formStatus) formStatus.textContent = '';
       }, 3000);
     });
   }
@@ -240,11 +257,22 @@ window.observer = new IntersectionObserver((entries) => {
   // Theme Toggle Button Logic
   const themeToggle = document.getElementById('theme-toggle');
 
+  // Keep <meta name="theme-color"> in sync with the resolved theme,
+  // not just the OS-level preference (fixes stale mobile browser chrome on manual toggle)
+  function syncThemeColor() {
+    const isDark = document.documentElement.classList.contains('dark-mode');
+    document.querySelectorAll('meta[name="theme-color"]').forEach(meta => {
+      meta.setAttribute('content', isDark ? '#09090b' : '#ffffff');
+    });
+  }
+  syncThemeColor();
+
   if (themeToggle) {
     themeToggle.addEventListener('click', () => {
       document.documentElement.classList.toggle('dark-mode');
       const isDark = document.documentElement.classList.contains('dark-mode');
       localStorage.setItem('theme', isDark ? 'dark' : 'light');
+      syncThemeColor();
     });
   }
 
