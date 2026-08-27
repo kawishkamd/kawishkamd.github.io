@@ -195,6 +195,8 @@ const fadeObserver = new IntersectionObserver((entries) => {
   const navObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
+        // Read scroll position BEFORE writing classes (avoids forced reflow)
+        const scrollY = window.scrollY;
         const current = entry.target.id;
         
         // Map 'shortcuts' to 'qualification' (Journey) for mobile menu only
@@ -212,7 +214,7 @@ const fadeObserver = new IntersectionObserver((entries) => {
         }
 
         // Update URL hash dynamically on scroll without page jump
-        if (window.scrollY < 300) {
+        if (scrollY < 300) {
           if (window.location.hash) {
             history.replaceState(null, null, window.location.pathname + window.location.search);
           }
@@ -236,8 +238,11 @@ const fadeObserver = new IntersectionObserver((entries) => {
     if (ticking) return;
     ticking = true;
 
+    // Capture scroll position at event time, before the rAF callback
+    // writes classes (read-after-write inside the frame forces reflow)
+    const scrollY = window.scrollY;
+
     window.requestAnimationFrame(() => {
-      const scrollY = window.scrollY;
       if (topHeader) {
         if (scrollY <= 50) {
           topHeader.classList.remove('nav-hidden');
