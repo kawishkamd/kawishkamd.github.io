@@ -1,5 +1,5 @@
 baseURL = 'https://kawishkamd.github.io/'
-locale = 'en-us'
+locale = 'en-us' # Hugo 0.158+ root key (replaces languageCode); feeds <html lang> via .Site.Language.Locale
 disableKinds = ["taxonomy", "term"]
 title = 'Kawishka'
 enableRobotsTXT = true
@@ -9,10 +9,9 @@ buildFuture = true
 [params]
   author = "Kawishka Dahanayaka"
   avatar = "/img/avatar.webp"
-  site_image = "/img/avatar.webp"
+  site_image = "/img/share.jpg"
   role = "Linux & Infrastructure"
   site_description = "Portfolio of Kawishka Dahanayaka, a DevOps-focused developer sharing projects, automation work, and infrastructure insights."
-  site_keywords = ["Kawishka Dahanayaka", "DevOps engineer", "developer portfolio", "Linux", "automation", "infrastructure"]
   hero_description = "I build Linux infrastructure, automation, and self-hosted systems that don't fall over."
   about_title = "About Me"
   about_description_1 = "I work mostly with Linux servers, DevOps tooling, and networking - setting up infra, automating the boring parts, and self-hosting things I could just as easily pay for."
