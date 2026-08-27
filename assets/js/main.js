@@ -154,21 +154,6 @@ const fadeObserver = new IntersectionObserver((entries) => {
     });
   }
 
-  const tabs = document.querySelectorAll('.qualification-btn[data-target]'),
-        tabContents = document.querySelectorAll('.qualification-content');
-
-  tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      const target = document.querySelector(tab.dataset.target);
-
-      tabContents.forEach(tc => tc.classList.remove('active'));
-      target.classList.add('active');
-
-      tabs.forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
-    });
-  });
-
   // Mobile Navigation Logic
   const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
   const topNavLinks = document.querySelectorAll('.nav-links a');

@@ -72,8 +72,7 @@
   }
 
   .about-grid,
-  .contact-grid,
-  .projects-grid {
+  .contact-grid {
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
@@ -209,15 +208,6 @@
     display: none;
   }
 
-  .qualification-tabs {
-    gap: 1rem;
-  }
-
-  .qualification-btn {
-    padding: 8px 12px;
-    font-size: 1rem;
-  }
-
   .qualification-card {
     gap: 1.5rem;
   }
@@ -269,12 +259,6 @@
     padding: 100px 2rem;
     position: relative;
     overflow: hidden;
-  }
-
-  .project-body p {
-    font-size: 12px;
-    line-height: 1.4;
-    margin-bottom: 0.25rem;
   }
 
   .mobile-nav-link span {

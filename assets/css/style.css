@@ -2,13 +2,6 @@
   font-family: 'Outfit';
   font-style: normal;
   font-display: swap;
-  font-weight: 300;
-  src: url('../fonts/outfit-latin-300-normal.woff2') format('woff2');
-}
-@font-face {
-  font-family: 'Outfit';
-  font-style: normal;
-  font-display: swap;
   font-weight: 400;
   src: url('../fonts/outfit-latin-400-normal.woff2') format('woff2');
 }
@@ -67,8 +60,6 @@ a:focus-visible {
   --card-bg: #fafaf9;
   --cta-bg: #0f0e0e;
   --cta-fg: #ffffff;
-  --project-overlay-bg: rgba(255, 255, 255, 0.88);
-  --project-overlay-border: rgba(255, 255, 255, 0.8);
 }
 
 body,
@@ -79,7 +70,6 @@ nav,
 .theme-toggle-btn,
 footer,
 .qualification-card,
-.project-card,
 .shortcut-card {
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
@@ -97,8 +87,6 @@ html.dark-mode {
   --card-bg: #222123;
   --cta-bg: #f3f4f6;
   --cta-fg: #09090b;
-  --project-overlay-bg: rgba(25, 24, 26, 0.88);
-  --project-overlay-border: rgba(255, 255, 255, 0.08);
 }
 
 html {
@@ -1020,45 +1008,8 @@ footer {
   background: var(--bg);
 }
 
-.qualification-tabs {
-  display: flex;
-  justify-content: center;
-  gap: 3rem;
-  margin: 4rem 0;
-}
-
-.qualification-btn {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: var(--muted);
-  cursor: pointer;
-  transition: all 0.3s;
-  padding: 10px 20px;
-  border-radius: 12px;
-}
-
-.qualification-btn i, .qualification-btn .bx-icon {
-  font-size: 1.4rem;
-}
-
-.qualification-btn.active {
-  color: var(--red);
-  background: var(--red-light);
-}
-
-.qualification-btn:hover:not(.active) {
-  color: var(--black);
-}
-
 .qualification-sections {
   width: 100%;
-}
-
-.qualification-content {
-  display: block;
 }
 
 .qualification-list {
